@@ -1,0 +1,40 @@
+import java.util.Random;
+
+public class MaiorMenorNumerosAleatorios {
+    public static void main(String[] args) {
+        // Tamanho do array
+        int tamanho = 15;
+        
+        // Criar um array de tamanho 15
+        int[] numeros = new int[tamanho];
+        
+        // Gerar números aleatórios e preencher o array
+        Random rand = new Random();
+        for (int i = 0; i < tamanho; i++) {
+            numeros[i] = rand.nextInt(100); // Gere números aleatórios entre 0 e 99
+        }
+        
+        // Inicialize as variáveis para armazenar o maior e o menor valores
+        int maior = numeros[0];
+        int menor = numeros[0];
+        
+        // Encontre o maior e o menor valores no array
+        for (int i = 1; i < tamanho; i++) {
+            if (numeros[i] > maior) {
+                maior = numeros[i];
+            }
+            if (numeros[i] < menor) {
+                menor = numeros[i];
+            }
+        }
+        
+        // Imprimir os números gerados, o maior e o menor valor
+        System.out.print("Números gerados: ");
+        for (int i = 0; i < tamanho; i++) {
+            System.out.print(numeros[i] + " ");
+        }
+        System.out.println(); // Pular uma linha
+        System.out.println("Maior valor: " + maior);
+        System.out.println("Menor valor: " + menor);
+    }
+}
