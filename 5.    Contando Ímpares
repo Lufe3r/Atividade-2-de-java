@@ -1,0 +1,35 @@
+import java.util.Random;
+
+public class ContarNumerosImpares {
+    public static void main(String[] args) {
+        // Tamanho do array
+        int tamanho = 30;
+
+        // Criar um array de tamanho 30
+        int[] numeros = new int[tamanho];
+
+        // Gerar números aleatórios e preencher o array
+        Random rand = new Random();
+        for (int i = 0; i < tamanho; i++) {
+            numeros[i] = rand.nextInt(100); // Gere números aleatórios entre 0 e 99
+        }
+
+        // Inicialize uma variável para contar os números ímpares
+        int contadorImpares = 0;
+
+        // Use um loop para percorrer o array e contar os números ímpares
+        for (int i = 0; i < tamanho; i++) {
+            if (numeros[i] % 2 != 0) {
+                contadorImpares++;
+            }
+        }
+
+        // Imprimir os números gerados e a contagem de números ímpares
+        System.out.print("Números gerados: ");
+        for (int i = 0; i < tamanho; i++) {
+            System.out.print(numeros[i] + " ");
+        }
+        System.out.println(); // Pular uma linha
+        System.out.println("Quantidade de números ímpares: " + contadorImpares);
+    }
+}
