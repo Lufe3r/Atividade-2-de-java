@@ -1,0 +1,30 @@
+import java.util.Random;
+
+public class ArrayEmOrdemReversa {
+    public static void main(String[] args) {
+        // Tamanho do array
+        int tamanho = 10;
+
+        // Criar um array de tamanho 10
+        int[] numeros = new int[tamanho];
+
+        // Gerar números aleatórios e preencher o array
+        Random rand = new Random();
+        for (int i = 0; i < tamanho; i++) {
+            numeros[i] = rand.nextInt(100); // Gere números aleatórios entre 0 e 99
+        }
+
+        // Imprimir o array em ordem reversa
+        System.out.print("Array original: ");
+        for (int i = 0; i < tamanho; i++) {
+            System.out.print(numeros[i] + " ");
+        }
+        System.out.println(); // Pular uma linha
+
+        System.out.print("Array em ordem reversa: ");
+        for (int i = tamanho - 1; i >= 0; i--) {
+            System.out.print(numeros[i] + " ");
+        }
+        System.out.println(); // Pular uma linha
+    }
+}
