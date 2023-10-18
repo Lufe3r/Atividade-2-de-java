@@ -1,0 +1,31 @@
+import java.util.Random;
+
+public class ContagemNumerosAleatorios {
+    public static void main(String[] args) {
+        // Tamanho do array
+        int tamanho = 50;
+        
+        // Criar um array de tamanho 50
+        int[] numeros = new int[tamanho];
+        
+        // Gerar números aleatórios entre 1 e 10 e preencher o array
+        Random rand = new Random();
+        for (int i = 0; i < tamanho; i++) {
+            numeros[i] = rand.nextInt(10) + 1; // Gere números aleatórios entre 1 e 10
+        }
+        
+        // Criar um array para armazenar as contagens
+        int[] contagens = new int[10]; // Índices 1 a 10
+        
+        // Contar quantas vezes cada número aparece
+        for (int i = 0; i < tamanho; i++) {
+            int numero = numeros[i];
+            contagens[numero - 1]++; // Subtrair 1 para mapear para o índice do array
+        }
+        
+        // Imprimir as contagens de cada número
+        for (int i = 0; i < 10; i++) {
+            System.out.println("Número " + (i + 1) + " aparece " + contagens[i] + " vezes.");
+        }
+    }
+}
